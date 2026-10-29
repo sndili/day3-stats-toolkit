@@ -1,0 +1,43 @@
+=== Statistics report: daily_deposits_kes ===
+Rows read         : 40
+Valid values      : 35
+Rejected values   : 5
+  row 7: '' (Missing value)
+  row 10: '-' (Invalid number)
+  row 14: 'n/a' (Invalid number)
+  row 25: '12,40O' (Invalid number)
+  row 29: '' (Missing value)
+
+                    all data      outliers removed
+count               35            31
+mean                22400.00      18349.65
+median              18805.47      18506.72
+mode                none          none
+variance (sample)   328019873.36  10116378.52
+std dev (sample)    18111.32      3180.63
+min / max           1200.00 / 96500.00    12772.70 / 26725.69
+Q1 / Q3             15988.21 / 21195.44    15988.21 / 20745.52
+IQR                 5207.23       4757.31
+
+Outlier fences      : lower 8177.36, upper 29006.28
+Outliers            :
+  96500.00 (2026-09-20, AG-104)
+  1200.00 (2026-10-02, AG-104)
+  88400.00 (2026-10-06, AG-104)
+  29060.99 (2026-10-07, AG-101)
+
+=== NumPy verification ===
+mean      MATCH
+median    MATCH
+variance  MATCH  (ddof=1)
+std dev   MATCH
+Q1 / Q3   MATCH  (method=median-of-halves)
+
+Risk team notes:
+Values outside the IQR fences may indicate unusual deposit activity or data-entry errors.
+Large deposits should be checked against transaction records before being treated as suspicious.
+Reviewing these cases alongside agent history can help distinguish legitimate peaks from activity requiring investigation.
+
+=== Unit tests ===
+Ran 9 tests in 0.015s
+OK
