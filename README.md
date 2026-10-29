@@ -157,6 +157,7 @@ The tests cover known mean values, odd and even medians, tied modes, empty input
 
 The current test suite contains nine tests, all of which passed in the latest test run as highlighted below:
 
+```text
 test_empty_input_raises (test_stats_toolkit.TestCentralTendency.test_empty_input_raises) ... ok
 test_mean_of_known_values (test_stats_toolkit.TestCentralTendency.test_mean_of_known_values) ... ok
 test_median_even_and_odd_lengths (test_stats_toolkit.TestCentralTendency.test_median_even_and_odd_lengths) ... ok
@@ -171,7 +172,7 @@ test_std_dev_single_value (test_stats_toolkit.TestSpread.test_std_dev_single_val
 Ran 9 tests in 0.015s
 
 OK
-
+```
 
 
 ## Results
